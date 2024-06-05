@@ -2,6 +2,7 @@
 
 import { IsAllowed, IsForbidden, PricingLink } from "@kobbleio/next/client";
 import { useState } from "react"
+import incrementJokeQuota from "../actions";
 
 const JOKE_GENERATED = 'joke-generated'
 
@@ -40,7 +41,7 @@ const GenerateJoke: React.FC = () => {
             <IsAllowed quota={JOKE_GENERATED}>
                 <button onClick={() => {
                             fetchJoke();
-                            // incrementJokeQuota()
+                            incrementJokeQuota()
                         }}
                         className="px-6 py-3 mt-4 text-lg font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800"
                         >
